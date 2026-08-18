@@ -59,4 +59,4 @@ async function registerUser(req, res) {
     res.status(201).json({ message: "User registered successfully", newUser, token });
 }
 
-export { registerUser };
+export { registerUser, loginUser };
