@@ -31,6 +31,18 @@ async function loginUser(req, res) {
     return res.status(200).json({ message: "Login successful", token });
 }
 
+async function getUser(req, res) {
+    const user = await userModel.findById(req.user.id);
+    if (!user) {
+        return res.status(404).json({ message: "User not found" });
+    }
+    return res.status(200).json({ user: {
+        id: user._id,
+        username: user.username,
+        email: user.email
+    } });
+}
+
 async function logoutUser(req, res) {
     const token = req.cookies.token;
     if (token) {
@@ -70,4 +82,4 @@ async function registerUser(req, res) {
     res.status(201).json({ message: "User registered successfully", newUser, token });
 }
 
-export { registerUser, loginUser, logoutUser };
+export { registerUser, loginUser, logoutUser, getUser };
