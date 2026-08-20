@@ -30,6 +30,11 @@ async function loginUser(req, res) {
     return res.status(200).json({ message: "Login successful", token });
 }
 
+async function logoutUser(req, res) {
+    res.clearCookie("token", options);
+    return res.status(200).json({ message: "Logout successful" });
+}
+
 async function registerUser(req, res) {
     const { username, email, password } = req.body;
 
