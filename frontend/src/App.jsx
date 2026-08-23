@@ -1,9 +1,12 @@
 import { useState } from 'react'
+import {RouterProvider} from "react-router";
+import router from "./app.routes.jsx";
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <h1>HELLO WORLD</h1>
+    <RouterProvider router={router} />
   )
 }
 
