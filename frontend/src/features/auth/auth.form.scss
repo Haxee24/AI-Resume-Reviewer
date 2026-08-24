@@ -21,6 +21,11 @@ main{
         gap: 0.75rem;
     }
 
+    a{
+        text-decoration: none;
+        color: #d60838;
+    }
+
     .form-group{
         display: flex;
         flex-direction: column;
