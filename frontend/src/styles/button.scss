@@ -1,0 +1,13 @@
+.button {
+    border: none;
+    outline: none;
+    padding-inline: 1.5rem;
+    padding-block: 0.5rem;
+    border-radius: 1rem;
+
+    &.primary-button {
+        background-color: #1f1f1f;
+        color: whitesmoke;
+    }
+}
+
